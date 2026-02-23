@@ -13,199 +13,99 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);min
 .header .tag{font-family:'Space Mono',monospace;font-size:.75rem;color:var(--cyan);letter-spacing:3px;text-transform:uppercase;margin-bottom:.5rem}
 .header h1{font-size:2rem;font-weight:700;margin-bottom:.3rem}
 .header .date{color:var(--dimmed);font-size:.85rem}
-
 .kpi-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-bottom:2rem}
 .kpi-card{background:var(--surface);border-radius:12px;padding:1.2rem 1.5rem;border-top:3px solid var(--blue)}
-.kpi-card.emerald{border-top-color:var(--emerald)}
-.kpi-card.rose{border-top-color:var(--rose)}
+.kpi-card.emerald{border-top-color:var(--emerald)}.kpi-card.rose{border-top-color:var(--rose)}
 .kpi-card .label{font-family:'Space Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:2px;text-transform:uppercase;margin-bottom:.5rem}
 .kpi-card .value{font-size:2.5rem;font-weight:700;line-height:1}
 .kpi-card .sub{color:var(--dimmed);font-size:.8rem;margin-top:.4rem}
-
 .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-bottom:2rem}
 .section-card{background:var(--surface);border-radius:12px;padding:1.5rem;overflow:hidden}
 .section-card h3{font-size:1rem;font-weight:700;margin-bottom:.3rem}
 .section-card .subtitle{color:var(--dimmed);font-size:.75rem;margin-bottom:1rem}
-
 table{width:100%;border-collapse:collapse;font-size:.82rem}
 th{text-align:left;padding:.55rem .6rem;background:var(--card);color:var(--muted);font-family:'Space Mono',monospace;font-size:.65rem;letter-spacing:1px;text-transform:uppercase;border-bottom:1px solid var(--border)}
 td{padding:.5rem .6rem;border-bottom:1px solid rgba(51,65,85,0.4)}
 .num{text-align:center;font-family:'Space Mono',monospace}
-
-.chart-wrap{position:relative;height:280px}
-.chart-wrap-sm{position:relative;height:200px}
-
-/* Gap list */
+.chart-wrap{position:relative;height:280px}.chart-wrap-sm{position:relative;height:200px}
+.win-banner{background:var(--surface);border-radius:12px;padding:1.5rem;border-left:4px solid var(--emerald);margin-bottom:1rem}
+.info-banner{background:var(--surface);border-radius:12px;padding:1.5rem;border-left:4px solid var(--cyan);margin-bottom:2rem}
+.banner-tag{font-family:'Space Mono',monospace;font-size:.65rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:.5rem}
+.banner-tag.win{color:var(--emerald)}.banner-tag.info{color:var(--cyan)}
+.banner-title{font-size:1.3rem;font-weight:700;margin-bottom:.4rem}
+.banner-desc{color:var(--muted);font-size:.88rem;line-height:1.6}
+.banner-badges{display:flex;gap:.5rem;margin-top:.8rem;flex-wrap:wrap}
+.badge{padding:.25rem .7rem;border-radius:20px;font-size:.72rem;font-weight:600}
+.badge.green{background:rgba(16,185,129,0.15);color:var(--emerald)}
+.badge.blue{background:rgba(59,130,246,0.15);color:var(--blue)}
+.badge.cyan{background:rgba(6,182,212,0.15);color:var(--cyan)}
 .gap-list{list-style:none}
 .gap-list li{display:flex;align-items:flex-start;gap:.6rem;padding:.65rem 0;border-bottom:1px solid rgba(51,65,85,0.3)}
 .gap-list li:last-child{border-bottom:none}
-.gap-accent{width:4px;min-height:32px;border-radius:2px;flex-shrink:0;margin-top:2px}
-.gap-accent.critical{background:var(--rose)}
-.gap-accent.warn{background:var(--amber)}
+.gap-accent{width:4px;min-height:32px;border-radius:2px;flex-shrink:0;margin-top:2px}.gap-accent.warn{background:var(--amber)}
 .gap-term{font-weight:700;font-size:.9rem}
-.gap-meta{color:var(--dimmed);font-size:.75rem;margin-top:.15rem}
 .gap-note{color:var(--muted);font-size:.78rem;font-style:italic;margin-top:.1rem}
 .gap-count{margin-left:auto;font-family:'Space Mono',monospace;font-size:.75rem;color:var(--dimmed);white-space:nowrap;flex-shrink:0}
-
-/* Critical banner */
-.critical-banner{background:var(--surface);border-radius:12px;padding:1.5rem;border-left:4px solid var(--rose);margin-bottom:2rem}
-.critical-banner .tag{font-family:'Space Mono',monospace;font-size:.65rem;color:var(--rose);letter-spacing:2px;text-transform:uppercase;margin-bottom:.5rem}
-.critical-banner .term{font-size:2.2rem;font-weight:700;margin-bottom:.3rem}
-.critical-banner .desc{color:var(--muted);font-size:.9rem;line-height:1.5;margin-bottom:.5rem}
-.critical-banner .fix{color:var(--rose);font-weight:700;font-size:.85rem}
-
-.play-bar{background:var(--surface);border-radius:12px;padding:1rem 1.5rem;display:flex;align-items:center;gap:.8rem;border-left:4px solid var(--cyan);margin-bottom:2rem}
-.play-bar .emoji{font-size:1.3rem}
-.play-bar .label{color:var(--cyan);font-weight:700;font-size:.85rem}
-.play-bar .text{color:var(--muted);font-size:.85rem}
-
+.play-bar{background:var(--surface);border-radius:12px;padding:1rem 1.5rem;display:flex;align-items:center;gap:.8rem;border-left:4px solid var(--cyan)}
+.play-bar .emoji{font-size:1.3rem}.play-bar .label{color:var(--cyan);font-weight:700;font-size:.85rem}.play-bar .text{color:var(--muted);font-size:.85rem}
 @media(max-width:768px){.kpi-row,.grid-2{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
-
 <div class="header">
   <div class="tag">Weekly Pulse</div>
   <h1>🔍 CMS & Search Intelligence</h1>
   <div class="date">Week of February 16, 2026 • 90-Day Activity Window</div>
 </div>
-
-<!-- KPIs -->
 <div class="kpi-row">
-  <div class="kpi-card">
-    <div class="label">Total Searches</div>
-    <div class="value" style="color:var(--blue)">341</div>
-    <div class="sub">Unique search terms (90 days)</div>
-  </div>
-  <div class="kpi-card emerald">
-    <div class="label">CMS Assets</div>
-    <div class="value" style="color:var(--emerald)">333</div>
-    <div class="sub">Across all content types</div>
-  </div>
-  <div class="kpi-card rose">
-    <div class="label">No-Result Terms</div>
-    <div class="value" style="color:var(--rose)">124</div>
-    <div class="sub">36% of searches return nothing</div>
-  </div>
+  <div class="kpi-card"><div class="label">Total Searches</div><div class="value" style="color:var(--blue)">341</div><div class="sub">Unique search terms (90 days)</div></div>
+  <div class="kpi-card emerald"><div class="label">CMS Assets</div><div class="value" style="color:var(--emerald)">333</div><div class="sub">Across all content types</div></div>
+  <div class="kpi-card rose"><div class="label">No-Result Terms</div><div class="value" style="color:var(--rose)">124</div><div class="sub">36% of searches return nothing</div></div>
 </div>
-
-<!-- Critical Banner -->
-<div class="critical-banner">
-  <div class="tag">🚨 Critical Gap</div>
-  <div class="term">"agent"</div>
-  <div class="desc">7 searches by 4 different reps — all returned zero results. The Agent to Agent Testing Brochure <strong>exists</strong> in CMS with 10 external shares and a 20% buyer open rate. This is a tagging/indexing issue, not a content gap. The content is performing well when reps find it manually — the search experience is the bottleneck.</div>
-  <div class="fix">FIX → Add search aliases for "agent", "agent to agent", "agent testing"</div>
+<div class="win-banner">
+  <div class="banner-tag win">✅ Gap Closed</div>
+  <div class="banner-title">"agent" — now ranks #1</div>
+  <div class="banner-desc">This was our top no-result search — 7 hits by 4 reps, all returning zero. We timely identified the gap from search data, created the Agent to Agent Testing Brochure, and it now ranks first for "agent" with <strong>High Buyer Engagement</strong> and <strong>Most Shared</strong> badges. 10 external shares, 20% buyer open rate.</div>
+  <div class="banner-badges"><span class="badge green">High Buyer Engagement</span><span class="badge blue">Most Shared</span><span class="badge green">10 Shares · 20% Open Rate</span></div>
 </div>
-
-<!-- Search Chart + Most Viewed -->
+<div class="info-banner">
+  <div class="banner-tag info">🤖 Ask Buddy Handles This</div>
+  <div class="banner-title">"gartner mq positioning" — works in AI Chat</div>
+  <div class="banner-desc">Long-tail queries like this work in <strong>Ask Buddy AI Chat</strong>. It returns TestMu AI's <strong>Challenger</strong> positioning in the 2025 Gartner MQ for AI-augmented software testing, with recommended seller messaging: lead with AI-driven automation, self-healing, orchestration, and manual→automated conversion. Verified by Mohammed Afzal till Aug 2026.</div>
+  <div class="banner-badges"><span class="badge cyan">Use Ask Buddy AI Chat for complex queries</span></div>
+</div>
 <div class="grid-2">
-  <div class="section-card">
-    <h3>Top Searches by Volume</h3>
-    <div class="subtitle">What reps are looking for most</div>
-    <div class="chart-wrap"><canvas id="searchChart"></canvas></div>
-  </div>
-  <div class="section-card">
-    <h3>Most Viewed CMS Assets</h3>
-    <div class="subtitle">Top content by internal views</div>
-    <table>
-      <thead><tr><th>Asset</th><th style="text-align:center">Views</th><th>Type</th></tr></thead>
-      <tbody>
-        <tr><td>Welcome Portal</td><td class="num">1,040</td><td>Onboarding</td></tr>
-        <tr><td>Demo Video — TestMu AI</td><td class="num">859</td><td>Video</td></tr>
-        <tr><td>TestMu AI Deck (Enterprise)</td><td class="num">112</td><td>Pitch Deck</td></tr>
-        <tr><td>TestMu AI Intro (Corp)</td><td class="num">76</td><td>Pitch Deck</td></tr>
-        <tr><td>TestMu AI Intro (Ent)</td><td class="num">57</td><td>Pitch Deck</td></tr>
-        <tr><td>Agent to Agent Testing</td><td class="num">30</td><td>Brochure</td></tr>
-        <tr><td>TestMu vs BrowserStack</td><td class="num">28</td><td>Comp Card</td></tr>
-      </tbody>
-    </table>
+  <div class="section-card"><h3>Top Searches by Volume</h3><div class="subtitle">What reps are looking for most</div><div class="chart-wrap"><canvas id="searchChart"></canvas></div></div>
+  <div class="section-card"><h3>Most Viewed CMS Assets</h3><div class="subtitle">Top content by internal views</div>
+    <table><thead><tr><th>Asset</th><th style="text-align:center">Views</th><th>Type</th></tr></thead><tbody>
+      <tr><td>Welcome Portal</td><td class="num">1,040</td><td>Onboarding</td></tr>
+      <tr><td>Demo Video — TestMu AI</td><td class="num">859</td><td>Video</td></tr>
+      <tr><td>TestMu AI Deck (Ent)</td><td class="num">112</td><td>Pitch Deck</td></tr>
+      <tr><td>TestMu AI Intro (Corp)</td><td class="num">76</td><td>Pitch Deck</td></tr>
+      <tr><td>TestMu AI Intro (Ent)</td><td class="num">57</td><td>Pitch Deck</td></tr>
+      <tr><td>Agent to Agent Testing</td><td class="num">30</td><td>Brochure</td></tr>
+      <tr><td>TestMu vs BrowserStack</td><td class="num">28</td><td>Comp Card</td></tr>
+    </tbody></table>
   </div>
 </div>
-
-<!-- Content Mix + Other Gaps -->
 <div class="grid-2">
-  <div class="section-card">
-    <h3>Content Mix in CMS</h3>
-    <div class="subtitle">333 assets by type</div>
-    <div class="chart-wrap-sm"><canvas id="mixChart"></canvas></div>
-  </div>
-  <div class="section-card">
-    <h3>Other Content Gaps</h3>
-    <div class="subtitle">Terms returning zero results</div>
+  <div class="section-card"><h3>Content Mix in CMS</h3><div class="subtitle">333 assets by type</div><div class="chart-wrap-sm"><canvas id="mixChart"></canvas></div></div>
+  <div class="section-card"><h3>Remaining Gaps</h3><div class="subtitle">Terms still returning zero results</div>
     <ul class="gap-list">
-      <li>
-        <span class="gap-accent critical"></span>
-        <div><div class="gap-term">"gartner mq positioning"</div><div class="gap-note">Analyst credibility content for mid-funnel deals</div></div>
-        <span class="gap-count">4 searches</span>
-      </li>
-      <li>
-        <span class="gap-accent warn"></span>
-        <div><div class="gap-term">"agent to agent" (variant)</div><div class="gap-note">Same indexing fix as "agent" covers this</div></div>
-        <span class="gap-count">2 searches</span>
-      </li>
-      <li>
-        <span class="gap-accent warn"></span>
-        <div><div class="gap-term">"mnda"</div><div class="gap-note">Legal template needed</div></div>
-        <span class="gap-count">2 searches</span>
-      </li>
-      <li>
-        <span class="gap-accent warn"></span>
-        <div><div class="gap-term">"quote" / "order form"</div><div class="gap-note">Pricing & quoting resources in demand</div></div>
-        <span class="gap-count">2 + 13</span>
-      </li>
-      <li>
-        <span class="gap-accent warn"></span>
-        <div><div class="gap-term">"slides" / "deck"</div><div class="gap-note">Generic terms — better CMS categories needed</div></div>
-        <span class="gap-count">2 + 8</span>
-      </li>
-      <li>
-        <span class="gap-accent warn"></span>
-        <div><div class="gap-term">"smart heal" / "testsigma"</div><div class="gap-note">Competitor content or product terms</div></div>
-        <span class="gap-count">2 + 2</span>
-      </li>
+      <li><span class="gap-accent warn"></span><div><div class="gap-term">"mnda"</div><div class="gap-note">Mutual NDA is widely called "NDA" — needs an MNDA → NDA alias</div></div><span class="gap-count">2 searches</span></li>
+      <li><span class="gap-accent warn"></span><div><div class="gap-term">"quote" / "order form"</div><div class="gap-note">Pricing & quoting resources in high demand</div></div><span class="gap-count">15 combined</span></li>
+      <li><span class="gap-accent warn"></span><div><div class="gap-term">"slides" / "deck"</div><div class="gap-note">Generic terms — better CMS categories needed</div></div><span class="gap-count">10 combined</span></li>
+      <li><span class="gap-accent warn"></span><div><div class="gap-term">"smart heal" / "testsigma"</div><div class="gap-note">Competitor or product terms — battle cards needed</div></div><span class="gap-count">4 combined</span></li>
     </ul>
   </div>
 </div>
-
-<!-- Play bar -->
 <div class="play-bar">
   <span class="emoji">💡</span>
-  <div><span class="label">This week's play: </span><span class="text">Can't find content? Use <strong>Ask Buddy</strong> — it searches beyond keywords. If it still comes up empty, flag it in #sales-enablement so we can close the gap.</span></div>
+  <div><span class="label">This week's play: </span><span class="text">Keyword search works for common terms. For long-tail or complex queries (<em>"our Gartner positioning"</em>, <em>"how do we compare to X"</em>), use <strong>Ask Buddy AI Chat</strong> — it understands context and returns richer answers.</span></div>
 </div>
-
 <script>
-new Chart(document.getElementById('searchChart'), {
-  type: 'bar', data: {
-    labels: ['kane ai', 'pricing', 'hyperexecute', 'browserstack', 'order form', 'kaneai', 'case study', 'test manager', 'icp', 'kane'],
-    datasets: [{
-      label: 'Searches',
-      data: [32, 26, 14, 13, 13, 12, 11, 11, 9, 9],
-      backgroundColor: 'rgba(59,130,246,0.7)', borderRadius: 4
-    }, {
-      label: 'Unique Users',
-      data: [11, 16, 7, 11, 12, 7, 3, 6, 1, 7],
-      backgroundColor: 'rgba(6,182,212,0.5)', borderRadius: 4
-    }]
-  }, options: {
-    indexAxis: 'y', responsive: true, maintainAspectRatio: false,
-    plugins: { legend: { position: 'bottom', labels: { color: '#94a3b8', font: { size: 11 } } } },
-    scales: {
-      x: { beginAtZero: true, grid: { color: 'rgba(51,65,85,0.3)' }, ticks: { color: '#94a3b8' } },
-      y: { grid: { display: false }, ticks: { color: '#94a3b8', font: { size: 11 } } }
-    }
-  }
-});
-
-new Chart(document.getElementById('mixChart'), {
-  type: 'doughnut', data: {
-    labels: ['Case Studies (53)', 'Demo Videos (35)', 'Comp Cards (24)', 'Security/Legal (23)', 'Training (22)', 'Pitch Decks (18)', 'Brochures (12)'],
-    datasets: [{ data: [53, 35, 24, 23, 22, 18, 12], backgroundColor: ['rgba(59,130,246,0.8)','rgba(6,182,212,0.8)','rgba(16,185,129,0.8)','rgba(139,92,246,0.8)','rgba(245,158,11,0.8)','rgba(244,63,94,0.6)','rgba(148,163,184,0.6)'], borderWidth: 0 }]
-  }, options: {
-    responsive: true, maintainAspectRatio: false, cutout: '55%',
-    plugins: { legend: { position: 'bottom', labels: { color: '#94a3b8', font: { size: 10 }, padding: 10, usePointStyle: true } } }
-  }
-});
+new Chart(document.getElementById('searchChart'),{type:'bar',data:{labels:['kane ai','pricing','hyperexecute','browserstack','order form','kaneai','case study','test manager','icp','kane'],datasets:[{label:'Searches',data:[32,26,14,13,13,12,11,11,9,9],backgroundColor:'rgba(59,130,246,0.7)',borderRadius:4},{label:'Unique Users',data:[11,16,7,11,12,7,3,6,1,7],backgroundColor:'rgba(6,182,212,0.5)',borderRadius:4}]},options:{indexAxis:'y',responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'bottom',labels:{color:'#94a3b8',font:{size:11}}}},scales:{x:{beginAtZero:true,grid:{color:'rgba(51,65,85,0.3)'},ticks:{color:'#94a3b8'}},y:{grid:{display:false},ticks:{color:'#94a3b8',font:{size:11}}}}}});
+new Chart(document.getElementById('mixChart'),{type:'doughnut',data:{labels:['Case Studies (53)','Demo Videos (35)','Comp Cards (24)','Security/Legal (23)','Training (22)','Pitch Decks (18)','Brochures (12)'],datasets:[{data:[53,35,24,23,22,18,12],backgroundColor:['rgba(59,130,246,0.8)','rgba(6,182,212,0.8)','rgba(16,185,129,0.8)','rgba(139,92,246,0.8)','rgba(245,158,11,0.8)','rgba(244,63,94,0.6)','rgba(148,163,184,0.6)'],borderWidth:0}]},options:{responsive:true,maintainAspectRatio:false,cutout:'55%',plugins:{legend:{position:'bottom',labels:{color:'#94a3b8',font:{size:10},padding:10,usePointStyle:true}}}}});
 </script>
-
 </body>
 </html>
